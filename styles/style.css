@@ -93,7 +93,7 @@ main {
   }
   .card__overlay {
     height: 100%;
-    width: 50%;
+    width: 552.5px;
     right: 0;
     border-radius: 0;
     border-top-right-radius: 0.5rem;
@@ -101,7 +101,7 @@ main {
   }
   .card__image {
     height: 100%;
-    width: 50%;
+    width: 552.5px;
     border-radius: 0;
     border-top-right-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;

@@ -103,13 +103,13 @@ main{
 
         &__overlay{
             height: 100%;
-            width: 50%;
+            width: $card-width/2;
             right: 0;
             @include border-right();
         }
         &__image{
             height: 100%;
-            width: 50%;
+            width:$card-width/2;
             @include border-right();
         }
 
