@@ -1,3 +1,5 @@
+// TODO: Separate CSS Variables to another Doc
+
 $color-bg: hsl(233, 47%, 7%);
 $color-card: hsl(244, 38%, 16%);
 $color-accent: hsl(277, 64%, 61%);
@@ -6,3 +8,166 @@ $color-text: hsl(0, 0%, 100%);
 $color-paragraph: hsla(0, 0%, 100%, 0.75);
 $color-heading: hsla(0, 0%, 100%, 0.6);
 
+$font-primary: 'Inter', sans-serif;
+$font-secondary: 'Lexend Deca', sans-serif;
+
+$card-height: 785px;
+$card-width: 325px;
+
+$border-radius: 0.5rem;
+@mixin flex-center(){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin border-top(){
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+}
+
+@mixin border-right(){
+    border-radius: 0;
+    border-top-right-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+main{
+    @include flex-center();
+    background-color: $color-bg;
+    height: 100vh;
+    width: 100vw;
+    font-size: 15px;
+}
+
+.card{
+    @include flex-center();
+    flex-direction: column;
+    height: $card-height;
+    width: $card-width;
+    background-color: $color-card;
+    color: $color-text;
+    font-family: $font-primary;
+    border-radius: $border-radius;
+    position: relative;
+
+    &__overlay{
+        background-color: hsla(271, 100%, 50%, 0.493);
+        position: absolute;
+        top: 0;
+        @include border-top();
+        height: 238px;
+        width: 100%;
+    }
+    &__image{
+        @include border-top();
+        height: 240px;
+        width: 100%;
+    }
+
+    &__body{
+        height: 100%;
+        @include flex-center();
+        justify-content: flex-start;
+        gap: 1rem;
+        flex-direction: column;
+        text-align: center;
+        padding: 2.5em 2em;
+    }
+
+    &__header{
+        font-size: 1.75rem;
+        span{
+            color: $color-accent;
+        }
+    }
+
+    // TODO Change color of headers
+    &__desc{
+        line-height: 1.75rem;
+    }
+    &__stats{
+    
+        ul {
+            list-style-type: none;
+            @include flex-center();
+            flex-direction: column;
+            padding-top: 1.5rem;
+            gap: 2rem;
+            li {
+                
+                text-transform: uppercase;
+                .card__stats--name{
+                    margin-top: 0.25em;
+                    font-size: 0.7rem;
+                    font-family: $font-secondary;
+                    letter-spacing: 1.25px;
+                    color: $color-heading;
+                }
+                
+            }
+            
+        }
+    }
+
+    p {
+        color: $color-paragraph;
+    }
+}
+
+@media screen and (min-width: 750px) {
+    $card-height: 445px;
+    $card-width: 1105px;
+
+    .card{
+        height: $card-height;
+        width: $card-width;
+
+        flex-direction: row-reverse;
+
+
+        &__overlay{
+            height: 100%;
+            width: 50%;
+            right: 0;
+            @include border-right();
+        }
+        &__image{
+            height: 100%;
+            width: 50%;
+            @include border-right();
+        }
+
+        &__body{
+            text-align: left;
+            justify-content: center;
+            padding: 4.375em;
+        }
+
+        &__header{
+            font-size: 2.25rem;
+        }
+
+        &__desc{
+            line-height: 1.5rem;
+            padding-right: 2rem;
+        }
+
+        &__stats{
+            width: 100%;
+            ul {
+                flex-direction: row;
+                justify-content: flex-start;
+                gap: 4rem;
+                }
+        }
+
+    }
+
+    
+}
