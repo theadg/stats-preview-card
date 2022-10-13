@@ -1,36 +1,6 @@
-// TODO: Separate CSS Variables to another Doc
+@import './mixins';
+@import './vars';
 
-$color-bg: hsl(233, 47%, 7%);
-$color-card: hsl(244, 38%, 16%);
-$color-accent: hsl(277, 64%, 61%);
-
-$color-text: hsl(0, 0%, 100%);
-$color-paragraph: hsla(0, 0%, 100%, 0.75);
-$color-heading: hsla(0, 0%, 100%, 0.6);
-
-$font-primary: 'Inter', sans-serif;
-$font-secondary: 'Lexend Deca', sans-serif;
-
-$card-height: 785px;
-$card-width: 325px;
-
-$border-radius: 0.5rem;
-@mixin flex-center(){
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-@mixin border-top(){
-    border-top-left-radius: $border-radius;
-    border-top-right-radius: $border-radius;
-}
-
-@mixin border-right(){
-    border-radius: 0;
-    border-top-right-radius: $border-radius;
-    border-bottom-right-radius: $border-radius;
-}
 *{
     padding: 0;
     margin: 0;
@@ -87,7 +57,7 @@ main{
         }
     }
 
-    // TODO Change color of headers
+
     &__desc{
         line-height: 1.75rem;
     }
